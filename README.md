@@ -20,14 +20,13 @@ Then we can create the bot.py file, open it with nano, and paste in the bot.py c
 
 ```
 cd discord_bot
-touch bot.py
 nano bot.py
 ```
-You should replace the channel and token variables. For channel, you can right-click the text channel you want the bot to post in, and click 'Copy link'. The number at the end of the link is the channel ID. For the token, you will get a token when you [set up your Discord bot]([url](https://discordpy.readthedocs.io/en/stable/discord.html)). You can just paste it in here, but best practice is to use something like [dotenv]([url](https://pypi.org/project/python-dotenv/)) to make sure you don't leak your secret information.
+The channel and token variables are passed as environment variables when you run the bot. For channel, you can right-click the text channel you want the bot to post in, and click 'Copy link'. The number at the end of the link is what you need. For the token, you will get a token when you [set up your Discord bot]([url](https://discordpy.readthedocs.io/en/stable/discord.html)).
 
-Once you have bot.py ready, you can run it:
+Once you have bot.py ready, you can run it, along with the envirnment variables:
 ```
-~/discord_bot/bin/python3 bot.py
+CHANNEL=YOUR_CHANNEL_ID TOKEN=YOUR_TOKEN ~/discord_bot/bin/python3 bot.py
 ```
 
 Your bot is now running. You can use the Discord developer UI to get a link to add your bot to your server, and you're good to go! Now when someone joins a voice channel, your bot will post a message containing their name to the channel you specified. You can set up notifications for yourself from that text channel, and now you have push notifications when your friends join voice channels!
