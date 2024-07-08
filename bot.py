@@ -4,8 +4,8 @@ intents = discord.Intents.default()
 intents.message_content = True
 
 client = discord.Client(intents=intents)
-channel = 'the text channel id to post in (int)'
-token = 'your discord bot token (str)'
+CHANNEL = os.getenv('CHANNEL')
+TOKEN =  os.getenv('TOKEN')
 
 @client.event
 async def on_ready():
